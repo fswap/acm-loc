@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+	<!-- Stylesheets and Javascript linked-->
+				<link rel="stylesheet" type="text/css" href="assi2a.css">
+				<script type="text/javascript" src="assi2.js"></script>
+    <!--Google fonts-->
+	          <link href="https://fonts.googleapis.com/css?family=Inconsolata|Slabo+27px&display=swap" rel="stylesheet">
+	<!-- Bootstrap Links-->
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+			  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+			  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+			  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: black">
+    <div class="jumbotron">
+    	<div class="tit">
+    	    <h1>QUIZ</h1>
+        </div>
+    </div>	
+    <div class="whole">
+    	<div class="container box">
+    		<div id="wel">
+    		<h3>Welcome to my Quiz</h3>
+    		<ul style="text-align: left">
+    			<li>This is Quiz is totally based on your JEE knowledge.</li>
+    			<li>It contains four sections.</li>
+    			<li>Section A contains 3 Multiple Choice Questions with single correct answer. Marking Scheme (+5,-2) </li>
+    		    <li>Section B contains Integer Type questions. Marking Scheme (+8,0) </li>
+    		    <li>Section C contains 3 Multiple Choice Questions with single correct answer based on a comprehension. Marking Scheme (+3,-1) </li>
+    		    <!--<li>Section D contains Matrix Matching Questions with mulitiple correct answers. Marking Scheme (+8,-5) </li>-->
+    		    <li>All the best for it.</li>
+    		</ul>
+    		<br>
+    		<br>
+    		<input id="button" class="btn btn-warning" type="button" value="Begin" onclick="begin();"><br>
+    	    </div>
+    <div id="start">
+    		  <form id="quiz" name="quiz">
+    		  	<div id="ques1">
+    		  		<h3>Section A (Single Choice Answers) (+5,-2)</h3>
+    		  		<p>Q.1] In a triangle 𝑃𝑄𝑅, let ∠𝑃𝑄𝑅 = 30°
+                       and the sides 𝑃𝑄 and 𝑄𝑅 have lengths 10√3 and 10,
+                       respectively. Then, which of the following statement(s) is (are) TRUE?</p>
+                       <p style="text-align: justify">
+                       <input type="radio" id="mc" name="ques1" value="A">(A) ∠𝑄𝑃𝑅 = 45°<br>
+                       <input type="radio" id="mc" name="ques1" value="B">(B) The area of the triangle 𝑃𝑄𝑅 is 25√3 and ∠𝑄𝑅𝑃 = 120°<br>
+                       <input type="radio" id="mc" name="ques1" value="C">(C) The radius of the incircle of the triangle 𝑃𝑄𝑅 is 10√3 <br>
+                       <input type="radio" id="mc" name="ques1" value="D">(D) The area of the circumcircle of the triangle 𝑃𝑄𝑅 is 10pi<br></p>
+                       <input id="button" class="btn btn-warning" type="button" value="Next" onclick="q2();"><br>
+                    
+    		  	</div>
+    		  	<div id="ques2">
+    		  		<p>Q.2] A uniform capillary tube of inner radius 𝑟 is dipped vertically into a beaker filled with water.
+                    The water rises to a height ℎ in the capillary tube above the water surface in the beaker. The surface tension of water is 𝜎. The angle of contact between water and the wall of the capillary tube is 𝜃. Ignore the mass of water in the meniscus. Which of the following statements is (are) true?</p>
+                    <p style="text-align: justify">
+                       <input type="radio" id="mc" name="ques2" value="A">(A)  For a given material of the capillary tube, ℎ decreases with increase in r.<br>
+                       <input type="radio" id="mc" name="ques2" value="B">(B)  For a given material of the capillary tube, ℎ is independent of 𝜎<br>
+                       <input type="radio" id="mc" name="ques2" value="C">(C)  If this experiment is performed in a lift going up with a constant acceleration, then ℎ increases <br>
+                       <input type="radio" id="mc" name="ques2" value="D">(D)  ℎ is proportional to contact angle 𝜃<br></p>
+                    
+                       <input id="button" class="btn btn-warning" type="button" value="Next" onclick="q3();"><br>
+    		  	</div>
+    		  	<div id="ques3">
+    		  		   <p>Q.3] The correct statement(s) regarding the binary transition metal carbonyl compounds is (are)  (Atomic numbers: Fe = 26, Ni = 28)</p>
+    		  		<p style="text-align: justify">
+                       <input type="radio" id="mc" name="ques3" value="A">
+                       (A) Total number of valence shell electrons at metal centre in Fe(CO)5 or Ni(CO)4 is 16.<br>
+                       <input type="radio" id="mc" name="ques3" value="B">(B) These are predominantly high spin in nature.<br>
+                       <input type="radio" id="mc" name="ques3" value="C">(C) Metal–carbon bond strengthens when the oxidation state of the metal is lowered <br>
+                       <input type="radio" id="mc" name="ques3" value="D">(D) The carbonyl C−O bond weakens when the oxidation state of the metal is increased<br></p>
+                    
+                       <input id="button" class="btn btn-warning" type="button" value="Next" onclick="q4();"><br>
+    		  	</div>
+    		  	<div id="ques4">
+    		  		<h3>Section B (Integer value)      (+8-0)</h3>
+    		  		<p>
+    		  			Q.4]  The number of 5 digit numbers which are divisible by 4, with digits from the set
+                        {1, 2, 3, 4, 5} and the repetition of digits is allowed, is _____ . 
+    		  		</p>
+    		  		
+    		  		<input id="textbox" type="text" name="ques4">
+    		  		<br>
+    		  		<br>
+    		  		<input id="button" class="btn btn-warning" type="button" value="Next" onclick="q5();"><br>
+    		  	</div>
+    		  	<div id="ques5">
+    		  		<p>
+       		  			 Q.5] Liquids A and B form ideal solution over the entire range of composition. At temperature T,
+                         equimolar binary solution of liquids A and B has vapour pressure 45 Torr.  At the same
+                         temperature, a new solution of A and B having mole fractions 𝑥𝐴 and 𝑥𝐵,  respectively, has
+                         vapour pressure of 22.5 Torr. The value of 𝑥𝐴/𝑥𝐵 in the new solution is ____.
+                         (given that the vapour pressure of pure liquid A is 20 Torr at temperature T)
+    		  		</p>
+    		  		
+    		  		<input id="textbox1" type="text" name="ques5">
+    		  		<br>
+    		  		<br>
+    		  		<input id="button" class="btn btn-warning" type="button" value="Next" onclick="q6();"><br>
+    		  	</div>
+    		  	<div id="ques6">
+    		  			<p>Q.6] Sunlight of intensity 1.3 𝑘𝑊 𝑚−2 is incident normally on a thin convex lens of focal length
+                        20 𝑐𝑚. Ignore the energy loss of light due to the lens and assume that the lens aperture size is much smaller than its focal length. The average intensity of light, in 𝑘𝑊 𝑚−2, at a distance 22 𝑐𝑚 from the lens on the other side is </p>
+                       
+    		  		<input id="textbox2" type="text" name="ques6">
+    		  		<br>
+    		  		<br>
+    		  		<input id="button" class="btn btn-warning" type="button" value="Next" onclick="q7();"><br>
+    		  	</div>
+    		  	<div id="ques7">
+    		  		<h2>Section C (Paragraph Type) (+3,0)</h2>
+    		  		<div class="para1" >
+    		  			<h3>Paragraph 1</h3>
+    		  			<p>There are five students 𝑆1, 𝑆2, 𝑆3, 𝑆4 and 𝑆5 in a music class and for them there are five seats 𝑅1, 𝑅2, 𝑅3, 𝑅4 and 𝑅5 arranged in a row, where initially the seat 𝑅𝑖 is allotted to the student 𝑆𝑖
+                        , 𝑖 = 1, 2, 3, 4, 5. But, on the examination day, the five students are randomly allotted the five seats.</p>
+    		  		</div>
+    		  		   <p>Q.7] The probability that, on the examination day, the student 𝑆1 gets the previously allotted seat
+                       𝑅1, and <b>NONE</b> of the remaining students gets the seat previously allotted to him/her is</p>
+    		  		<p style="text-align: justify">
+                       <input type="radio" id="mc" name="ques7" value="A">
+                       (A) 3/40<br>
+                       <input type="radio" id="mc" name="ques7" value="B">(B) 1/8<br>
+                       <input type="radio" id="mc" name="ques7" value="C">(C) 7/40 <br>
+                       <input type="radio" id="mc" name="ques7" value="D">(D) 1/5<br></p>
+                       
+                       <input id="button" class="btn btn-warning" type="button" value="Next" onclick="q8();"><br>
+    		  	</div>
+    		  	<div id="ques8">
+    		  		
+    		  		<div class="para1">
+    		  			<h3>Paragraph 2</h3>
+    		  			<p>There are five students 𝑆1, 𝑆2, 𝑆3, 𝑆4 and 𝑆5 in a music class and for them there are five seats 𝑅1, 𝑅2, 𝑅3, 𝑅4 and 𝑅5 arranged in a row, where initially the seat 𝑅𝑖 is allotted to the student 𝑆𝑖
+                        , 𝑖 = 1, 2, 3, 4, 5. But, on the examination day, the five students are randomly allotted the five seats</p>
+    		  		</div>
+    		  		     <p>Q.8]  For 𝑖 = 1, 2, 3, 4, let 𝑇𝑖 denote the event that the students 𝑆𝑖 and 𝑆𝑖+1 do NOT sit adjacent
+                         to each other on the day of the examination. Then, the probability of the event 𝑇1 ∩ 𝑇2 ∩ 𝑇3 ∩ 𝑇4 is </p>
+    		  		<p style="text-align: justify">
+                       <input type="radio" id="mc" name="ques8" value="A">(A) 1/15<br>
+                       <input type="radio" id="mc" name="ques8" value="B">(B) 1/10<br>
+                       <input type="radio" id="mc" name="ques8" value="C">(C) 7/60 <br>
+                       <input type="radio" id="mc" name="ques8" value="D">(D) 1/5<br></p>
+                       
+                       <input id="button" class="btn btn-warning" type="button" value="Submit" onclick="Score();"><br>
+    		  	</div>
+    		  	<div id="score">
+                                <h3>CONGRATULATIONS!!!</h3>
+                                <p id="demo"></p>   
+    		  	</div>	
+    		  </form>
+    	</div>
+    	</div>
+    	
+    </div>
+    	 
+</body>
+</html>
