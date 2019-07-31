@@ -61,7 +61,6 @@
 	background-color: #4A235A;
 	height: 90px;
 	margin: 5px;
-	display: none;
 }
 .n3 span{
 	font-size: 18px;
@@ -74,14 +73,6 @@
 	height: 90px;
 	width: 100%;
 	max-width: 200px;
-}
-
-.vd{
-	display: none;
-}
-
-.n2{
-	display: none;
 }
 
 

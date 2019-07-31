@@ -1,4 +1,123 @@
-const bb = document.getElementById("bb");
+<?php
+include "connections.php";
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Break-a-Brick</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="styling.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="row no-gutters">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="n4">
+									<h1>Break-a-Brick</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row no-gutters" id="n1">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							    <div class="n1">Score  <span id="score"></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="n1">Level  <span id="level"></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="n1">Lives  <span id="lives"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row no-gutters">
+					<canvas id="bb"></canvas>
+				</div>
+				<div class="row no-gutters"> 
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				        <div id="go">
+						    <div class="go">
+							    <h1>Game Over</h1><br>
+							    <?php
+							    /*mysqli_query($db,"UPDATE players SET score = '$sc';"); */
+							    $sc = "game over";
+							    echo "$sc";
+							    ?>
+							    <ul>
+								    <li>Your Score : <span id="scores"></span></li>
+								    <li>Level Attained : <span id="levels"></span></li>
+							    </ul>
+							    <a href="modes.php"><button>Try Again</button></a>
+						    </div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row no-gutters">
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="n100"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div id="n3">
+								    <div class="n3" >
+									    <button id="left" onclick="goleft()"><span><<<</span></button>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div id="n4">
+								    <div class="n3">
+								 	    <button id="right" onclick="goright()"><span>>>></span></button>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<div class="row no-gutters">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="n100"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<script type="text/javascript">
+		const bb = document.getElementById("bb");
+
+const n3 = document.getElementById("n3");
+const n4 = document.getElementById("n4");
+const n1 = document.getElementById("n1");
 const ctx = bb.getContext("2d");
 const bimg = new Image();
 bimg.src = "black.jpeg"
@@ -10,9 +129,13 @@ margin_bottom = 2;
 ball_radius = 3;
 let GAME_OVER = false;
 let life = 3;
+let m = 3;
 let level = 1;
 let score = 0;
-let sp = 1;
+let sp = 3;
+
+
+
 
 const paddle = {
 	x : bb.width/2 - paddle_width/2,
@@ -70,6 +193,8 @@ function drawBricks(){
 		}
 	}
 }
+
+
 
 function ballBrickCollision(){
 	for(let r=0; r<brick.row; r++){
@@ -163,7 +288,6 @@ function levelUp(){
 }
 
 
-
 function loop(){
 	ctx.drawImage(bimg,0,0);
 	drawPaddle();
@@ -185,24 +309,15 @@ else{
 	bb.style.display = "none";
 	document.getElementById("scores").innerHTML = score;
 	document.getElementById("levels").innerHTML = level;
+	go.getElementsByClassName("go")[0].style.display="block";
+	n3.getElementsByClassName("n3")[0].style.display="none";
+	n4.getElementsByClassName("n3")[0].style.display="none";
 	n1.getElementsByClassName("n1")[0].style.display="none";
 	n1.getElementsByClassName("n1")[1].style.display="none";
 	n1.getElementsByClassName("n1")[2].style.display="none";
-	n3.getElementsByClassName("n3")[0].style.display="none";
-	n3.getElementsByClassName("n3")[1].style.display="none";
-	go.getElementsByClassName("go")[0].style.display="block";
 }
 }
-function startGame(){
-	rl.getElementsByClassName("rl")[0].style.display="none";
-	bb.style.display = "block";
-	n1.getElementsByClassName("n1")[0].style.display="block";
-	n1.getElementsByClassName("n1")[1].style.display="block";
-	n1.getElementsByClassName("n1")[2].style.display="block";
-	n3.getElementsByClassName("n3")[0].style.display="block";
-	n3.getElementsByClassName("n3")[1].style.display="block";
 	loop();
-}
 
 function goleft(){
 	if(paddle.x >= paddle.dx){
@@ -214,3 +329,5 @@ function goright(){
 	paddle.x=paddle.x+paddle.dx;}
 }
 
+	</script>
+</body>
