@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@
     <div class="card-img-overlay">
       <h4 class="card-title">WELCOME TO CENTRAL LIBRARY</h4>
       <p class="card-text"></p>
-      <a href="adminlogin.php" class="btn btn-primary">Login</a>
+      <a href="login.php" class="btn btn-primary">Login</a>
     </div>
   </div>
     </div>
