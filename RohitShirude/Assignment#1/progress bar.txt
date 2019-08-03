@@ -1,0 +1,43 @@
+HTML
+    		<div class="bars">
+    			    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">HTML</div>
+                             <div class="progress-bar bg-danger" style="width:80%;">80%</div>
+                    </div><br>
+                    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">CSS</div>
+                             <div class="progress-bar bg-danger" style="width:70%;">70%</div>
+                    </div><br>
+                    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">JavaScript</div>
+                             <div class="progress-bar bg-danger" style="width:50%;">50%</div>
+                    </div><br>
+                    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">Bootstrap</div>
+                             <div class="progress-bar bg-danger" style="width:60%;">60%</div>
+                    </div><br>
+                    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">C</div>
+                             <div class="progress-bar bg-danger" style="width:60%;">60%</div>
+                    </div><br>
+                    <div class="progress" style="height:30px;" >
+                             <div class="progress-bar bg-info" style="width:25%; font-size: 18px;">C++</div>
+                             <div class="progress-bar bg-danger" style="width:60%;">60%</div>
+                    </div><br>
+            </div>
+    	</div>
+
+CSS
+
+/*.bars{
+  width: 80%;
+  height: 70%;
+  margin: auto;
+}
+
+.bar-txt{
+  width: 25%;
+  height: 70%;
+  border: 2px solid red;
+  float: left;
+}*/
